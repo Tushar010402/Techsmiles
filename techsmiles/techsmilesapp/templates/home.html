@@ -1,0 +1,515 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar with Logo Image</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    
+  <style>
+    html{
+      font-size: 16px;
+    }
+    #logonavbar{
+        margin-left: 6rem;
+    }
+    #navbarbackgroundcolor{
+        background-color: #FDF9EE!important;
+        padding-top: 1rem;
+        padding-bottom: 1rem
+;
+    }
+    #aboutusnameinnavbar a{
+        font-size: 1.3rem;
+        margin-right: 1.7rem;
+        color:#1E1E1E;
+;
+    }
+    #Bookappointmentinnavbar a{ 
+        font-size: 1.3rem;
+        font-weight: 600;
+        color:#1E1E1E;
+;
+        
+    }
+    /* Add custom styles here */
+    .background-section {
+      background-image: url('../static/firstdiv.svg');
+      
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      width: 100%;
+    }
+    .background-section {
+  background-color: #FDF9EE;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Firstdivcontent {
+  text-align: center;
+}
+
+.Firstdivcontent h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 82.8px;
+  color: #000000; /* Assuming black for text color */
+  padding-inline: 20rem;
+  margin-bottom: 3rem;
+}
+.Firstdivcontent a{
+    color: #FDF9EE;
+  border: 1px solid black;
+  padding: 1.3rem;
+  border-radius: 50px;
+}
+.social-icons {
+  position: absolute;
+  bottom: 110px;
+  right: 0;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .2rem;
+  margin-right: 5rem;
+}
+
+.social-icons span {
+  margin-left: 0.5rem; /* Adjust as needed */
+}
+.secondmainDiv{
+    background-color: #FDF9EE;
+}
+.secondmainDiv{
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.secondmainDiv span{
+    font-size: 1.3rem;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 50px;
+  margin-inline: 3rem;
+  font-weight: 700;
+  
+}
+.secondmainDiv a{
+    color: #1E1E1E;
+
+}
+
+
+
+.section3bannersMainDiv {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 12rem;
+  flex-wrap: wrap; /* Added for responsiveness */
+}
+
+.serviceContainer {
+  background-color: #A0C1BA;
+  margin: 0 1rem 2rem 1rem;
+  border-radius: 15px;
+  overflow: hidden; /* Ensure the border radius applies to both image and content */
+  max-width: 350px; /* Optional: to control the maximum width of each card */
+  flex: 1; /* Allow flex items to grow */
+}
+
+.serviceImageDiv img {
+  width: 100%;
+  display: block;
+}
+
+.serviceContentCss {
+  padding: 1.5rem 2rem 2rem 2rem;
+  text-align: left;
+}
+
+.serviceContentCss h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.serviceContentCss p {
+  font-size: .9rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Media query for devices with width less than or equal to 768px */
+
+
+.about-section {
+  background-color: #A0C1BA;
+  padding: 3rem 1rem;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 360px;
+  border-radius: 15px;
+  margin: 1rem;
+  margin-left: 3rem;
+}
+
+
+.about-content {
+  flex: 2;
+  margin: 1rem;
+  text-align: left;
+}
+
+.about-content h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  padding: 3rem 1rem;
+  background-color: #fff;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial-card {
+  background-color: #E8E8E8;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem;
+  min-width: 300px;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.customer-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.customer-info h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.customer-info p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+
+.testimonial {
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .testimonial .quote {
+            padding: 20px;
+            background-color: teal;
+            color: white;
+        }
+        .testimonial .author {
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+        }
+        .testimonial .author img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        @media (max-width: 1441px) {
+          html{
+            font-size: 12px;
+          }
+}
+
+
+        @media (max-width: 1281px) {
+          html{
+            font-size: 12px;
+          }
+}
+@media (max-width: 801px) {
+  html{
+    font-size: 10px;
+  }
+  .Firstdivcontent h2{
+    padding-inline: 2rem;
+  }
+  #logonavbar img{
+    width: 250px!important;
+  }
+  #logonavbar{
+    margin-left: 2rem;
+  }
+}
+
+
+
+        @media (max-width: 768px) {
+  .section3bannersMainDiv {
+    padding: 1rem;
+  }
+
+  .serviceContainer {
+    margin: 1rem 0; /* Adjust margins for smaller screens */
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin: 0 auto 1rem auto;
+  }
+
+  .about-content {
+    margin: 0 auto;
+  }
+}
+/* Responsive Styles */
+
+@media (max-width:451px){
+ 
+  html{
+    font-size: 10px;
+  }
+  .Firstdivcontent h2{
+    padding-inline: 2rem;
+  }
+  #logonavbar img{
+    width: 250px!important;
+  }
+  #logonavbar{
+    margin-left: 2rem;
+  }
+  .secondmainDiv span{
+    display: block;
+  margin-bottom: 2rem;
+  }
+  .section3bannersMainDiv{
+    display: block;
+  text-align: center;
+  padding-inline: 8rem!important;
+  }
+  .Firstdivcontent h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 48.8px;
+  color: #000000;
+  padding-inline: 2rem;
+  margin-bottom: 3rem;
+}
+  
+
+}
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbarbackgroundcolor">
+  <a class="navbar-brand" href="#" id="logonavbar">
+    <img src="{% static 'Logo.svg' %}" alt="Logo" width="400" height="80">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto"> <!-- Changed class to ml-auto for right alignment -->
+      <li class="nav-item active" id="aboutusnameinnavbar">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+      <li class="nav-item" id="aboutusnameinnavbar">
+        <a class="nav-link" href="#">Dental Treatments</a>
+      </li>
+      <li class="nav-item" id="aboutusnameinnavbar">
+        <a class="nav-link" href="#">Facial Aesthetics</a>
+      </li>
+      <li class="nav-item" id="Bookappointmentinnavbar">
+        <span style="border: 2px solid black; border-radius: 50px; padding: 0.5rem 1rem; display: flex; align-items: center;padding-inline: 2rem;margin-top: -.4rem;padding-left: 2.5rem;">
+          <img src="{%static 'Vector.svg' %}" alt="icon" width="30" height="30" style="margin-right: 0.5rem;">
+          <a class="nav-link" href="#" style="text-decoration: none;">Book Appointment</a>
+          <i class="fas fa-calendar-plus" style="margin-left: auto;"></i>
+        </span>
+      </li>
+      
+      <li class="nav-item" id="aboutusnameinnavbar">
+        <a class="nav-link" href="#"><img src="{%static 'ic_baseline-call.svg' %}" alt="callIcon" width="30" height="30" style="margin-left: 10px;" ></a>
+      </li>
+      <li class="nav-item" id="aboutusnameinnavbar">
+        <a class="nav-link" href="#"><img src="{%static 'Group.svg' %}" alt="callIcon" width="30" height="30" style="margin-left: -15px;" ></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="background-section">
+    <div class="Firstdivcontent">
+        <h2>Discover a world where dental excellence meets facial artistry</h2>
+        <a href="#"><img src="{%static 'Vector(1).svg' %}" alt="callIcon" width="20" height="20" style="margin-right: .6rem;
+            padding-left: .3rem;"> Request a Call Back</a>
+    </div>
+    <div class="social-icons">
+        <span><a href="#"><img src="{%static 'facebook.svg' %}" alt="facebookicon" width="20" height="20"></a></span>
+        <span><a href="#"><img src="{%static 'Group(1).svg' %}" alt="facebookicon" width="20" height="20"></a></span>
+        <span><a href="#"><img src="{%static 'linkedin.svg' %}" alt="facebookicon" width="20" height="20"></a></span>
+        <span><a href="#"><img src="{%static 'Youtube.svg' %}" alt="facebookicon" width="20" height="20"></a></span>
+        <span><a href="#"><img src="{%static 'Instagram.svg' %}" alt="facebookicon" width="20" height="20"></a></span>
+    </div>
+</div>
+
+
+<div class="secondmainDiv">
+ <span><a href="#"><img src="{%static 'Vector(2).svg' %}" alt="callIcon" width="25" height="25" style="margin-right: .6rem;
+    padding-left: .3rem;"> E - Consult</a></span>
+    <span><a href="#"><img src="{%static 'pajamas_smile.svg' %}" alt="callIcon" width="25" height="25" style="margin-right: .6rem;
+        padding-left: .3rem;"> Request a Call Back</a></span>
+        <span><a href="#"><img src="{%static 'Vector.svg' %}" alt="callIcon" width="25" height="25" style="margin-right: .6rem;
+            padding-left: .3rem;"> Request a Call Back</a></span>
+</div>
+
+<section class="ServicesSectionMain">
+  <div class="section3bannersMainDiv">
+    <div class="serviceContainer">
+      <div class="serviceImageDiv">
+        <img src="{% static 'firstdivsimage.svg' %}" alt="Safety Protocol">
+      </div>
+      <div class="serviceContentCss">
+        <h2>Your safety is our priority</h2>
+        <p>3 step sterilization protocol to be 100% sure that you are completely safe.</p>
+      </div>
+    </div>
+    <div class="serviceContainer">
+      <div class="serviceImageDiv">
+        <img src="{% static 'Image.svg' %}" alt="Helpline">
+      </div>
+      <div class="serviceContentCss">
+        <h2>We’re there when you need us the most</h2>
+        <p>24X7 personalized assistance through a round-the-clock helpline number.</p>
+      </div>
+    </div>
+    <div class="serviceContainer">
+      <div class="serviceImageDiv">
+        <img src="{% static 'Image2.svg' %}" alt="Personalized Care">
+      </div>
+      <div class="serviceContentCss">
+        <h2>Personalized care for you and your family</h2>
+        <p>Our dedicated patient care executives know your needs well.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-container">
+    <img src="{% static 'Group 1.svg' %}" alt="About us" class="about-image">
+    <div class="about-content">
+      <h2>About us</h2>
+      <p>
+        Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+        like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial-section">
+  <div class="testimonial">
+    <div class="quote">"As a satisfied customer of [SaaS Provider], I want to share my positive experience with others. Their software as a service platform has greatly improved the efficiency and productivity of our business and helped to stay ahead of the technology curve."</div>
+    <div class="customer-info">
+      <div class="avatar">
+        <img src="path_to_image" alt="Customer Avatar">
+      </div>
+      <div class="name">Savannah Nguyen</div>
+      <div class="role">Customer</div>
+    </div>
+  </div>
+
+  <div class="testimonial">
+    <div class="quote">"As a satisfied customer of [SaaS Provider], I want to share my positive experience with others. Their software as a service platform has greatly improved the efficiency and productivity of our business and helped to stay ahead of the technology curve."</div>
+    <div class="customer-info">
+      <div class="avatar">
+        <img src="path_to_image" alt="Customer Avatar">
+      </div>
+      <div class="name">Savannah Nguyen</div>
+      <div class="role">Customer</div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>
